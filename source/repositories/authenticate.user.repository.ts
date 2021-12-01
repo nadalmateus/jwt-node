@@ -27,7 +27,7 @@ export class AutheticateUserRepository {
 
     const token = sign({}, '123123123123123123123', {
       subject: userAlreadyExists.id,
-      expiresIn: '20s'
+      expiresIn: '120s'
     })
 
     return { token }
