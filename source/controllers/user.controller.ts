@@ -1,12 +1,12 @@
 import { Request, Response } from 'express'
-import CreateUserUseCase from '../repositories/user.repository'
+import CreateUserRepository from '../repositories/user.repository'
 
 export default class CreateUserController {
   async handle (request: Request, response: Response) {
     const { username, password } = request.body
 
-    const createUserUseCase = new CreateUserUseCase()
-    const user = await createUserUseCase.execute({
+    const createUserRepository = new CreateUserRepository()
+    const user = await createUserRepository.execute({
       username,
       password
     })
